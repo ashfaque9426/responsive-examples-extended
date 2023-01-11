@@ -1,0 +1,95 @@
+/* defining grid area */
+.header {
+    grid-area: header;
+}
+
+.nav {
+    grid-area: nav;
+}
+
+.main {
+    grid-area: main;
+}
+
+.aside {
+    grid-area: aside;
+}
+
+.ad {
+    grid-area: ad;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.header,
+.nav,
+.aside,
+.ad,
+.main,
+.footer {
+    background-color: bisque;
+    padding: 15px;
+}
+
+/* grid layout related styles */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    gap: 20px;
+    grid-template-areas:
+        "header header header header"
+        "nav main main aside"
+        "nav main main ad"
+        "footer footer footer footer"
+    ;
+}
+
+.grid-container li {
+    list-style-type: none;
+}
+
+.grid-container a {
+    text-decoration: none;
+    color: black;
+}
+
+/* responsive styles */
+@media screen and (max-width: 576px) {
+    .nav ul {
+            padding-left: 0;
+            display: flex;
+            justify-content: space-between;
+    }
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            ".header."
+            ".nav."
+            ".main."
+            ".aside."
+            ".ad."
+            ".footer."
+        ;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 992px) {
+    .nav ul {
+        padding-left: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    .grid-container {
+            grid-template-columns: 1fr 2fr 3fr 3fr 1fr;
+            grid-template-areas:
+                ".header header header."
+                ".nav nav nav."
+                ".aside main main."
+                ".aside main main."
+                ".aside main main."
+                ".ad footer footer."
+            ;
+        }
+}
