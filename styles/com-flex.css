@@ -63,7 +63,14 @@ img {
     }
 }
 
-@media screen and (min-width: 945px) {
+@media screen and (min-width: 577px) and (max-width: 992px) {
+    .second-row,
+        .third-row {
+            flex-direction: column;
+        }
+}
+
+@media screen and (min-width: 993px) {
     .row {
         height: 400px;
     }
