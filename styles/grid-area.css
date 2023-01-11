@@ -1,3 +1,8 @@
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+
 /* defining grid area */
 .header {
     grid-area: header;
@@ -33,6 +38,10 @@
     padding: 15px;
 }
 
+.ad, .aside {
+    padding-right: 100px;
+}
+
 /* grid layout related styles */
 .grid-container {
     display: grid;
@@ -40,6 +49,9 @@
     gap: 20px;
     grid-template-areas:
         "header header header header"
+        "nav main main aside"
+        "nav main main aside"
+        "nav main main aside"
         "nav main main aside"
         "nav main main ad"
         "footer footer footer footer"
@@ -80,6 +92,9 @@
         padding-left: 0;
         display: flex;
         justify-content: space-between;
+    }
+    .ad, .aside {
+        padding-right: 0;
     }
     .grid-container {
             grid-template-columns: 1fr 2fr 3fr 3fr 1fr;
